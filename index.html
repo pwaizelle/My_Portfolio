@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Praise-EL Michaels - AI/ML Researcher & Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0c0a14;
+  --bg2:#13111d;
+  --bg3:#1c1830;
+  --surface:#211d35;
+  --border:#2e2852;
+  --text:#e8e4f4;
+  --text-dim:#9990b8;
+  --accent:#8b5cf6;
+  --accent2:#a78bfa;
+  --accent3:#c4b5fd;
+  --accent4:#ddd6fe;
+  --accent5:#7c3aed;
+  --warm:#f0abfc;
+  --teal:#67e8f9;
+  --rose:#fda4af;
+  --amber:#fcd34d;
+  --emerald:#6ee7b7;
+  --glow:rgba(139,92,246,0.12);
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}
+body::before{content:'';position:fixed;inset:0;z-index:9999;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");background-size:128px 128px;opacity:0.45}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:3px}
+
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:4rem 2rem;position:relative;overflow:hidden}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);animation:drift 22s ease-in-out infinite;pointer-events:none}
+.hero-orb.one{width:500px;height:500px;top:-15%;left:-8%;background:radial-gradient(circle,rgba(139,92,246,0.14) 0%,transparent 70%)}
+.hero-orb.two{width:400px;height:400px;bottom:-10%;right:-5%;background:radial-gradient(circle,rgba(167,139,250,0.1) 0%,transparent 70%);animation-delay:-10s;animation-direction:reverse}
+.hero-orb.three{width:300px;height:300px;top:30%;right:20%;background:radial-gradient(circle,rgba(124,58,237,0.08) 0%,transparent 70%);animation-delay:-5s;animation-duration:28s}
+@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(30px,-25px) scale(1.05)}66%{transform:translate(-20px,20px) scale(0.95)}}
+
+.hero-inner{max-width:900px;margin:0 auto;position:relative;z-index:1}
+.hero-label{font-family:'JetBrains Mono',monospace;font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent2);margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
+.hero-label::before{content:'';width:32px;height:1px;background:var(--accent2)}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:1rem;letter-spacing:-0.03em}
+.hero h1 .gradient{background:linear-gradient(135deg,var(--accent),var(--warm));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:1.15rem;color:var(--text-dim);max-width:660px;margin-bottom:1.25rem;font-weight:300}
+.hero-affiliation{font-family:'JetBrains Mono',monospace;font-size:0.78rem;color:var(--accent3);margin-bottom:2.5rem;opacity:0.85}
+.hero-links{display:flex;flex-wrap:wrap;gap:0.75rem}
+.hero-links a{font-family:'JetBrains Mono',monospace;font-size:0.8rem;padding:0.6rem 1.2rem;border:1px solid var(--border);border-radius:6px;color:var(--text);text-decoration:none;transition:all 0.3s;background:var(--bg2)}
+.hero-links a:hover{border-color:var(--accent);color:var(--accent);background:var(--glow)}
+.hero-links a.primary{background:linear-gradient(135deg,var(--accent5),var(--accent));border-color:var(--accent);color:#fff}
+.hero-links a.primary:hover{opacity:0.85;transform:translateY(-1px);box-shadow:0 4px 20px rgba(139,92,246,0.3)}
+
+section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+.section-label{font-family:'JetBrains Mono',monospace;font-size:0.7rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--accent);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.6rem}
+.section-label::before{content:'';width:20px;height:1px;background:var(--accent)}
+.section-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:700;margin-bottom:3rem;letter-spacing:-0.02em}
+
+.stats{padding:3rem 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--bg2)}
+.stats-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:2rem;text-align:center}
+.stat-num{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--warm));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:0.75rem;color:var(--text-dim);margin-top:0.25rem;font-family:'JetBrains Mono',monospace;letter-spacing:0.05em}
+
+.tools-section{padding:3rem 0;overflow:hidden;border-bottom:1px solid var(--border)}
+.marquee{display:flex;gap:2rem;animation:scroll 45s linear infinite;width:max-content}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee span{font-family:'JetBrains Mono',monospace;font-size:0.8rem;color:var(--text-dim);white-space:nowrap;padding:0.5rem 1rem;border:1px solid var(--border);border-radius:6px;background:var(--bg2)}
+
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+.skill-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);position:relative;overflow:hidden}
+.skill-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--card-accent,var(--accent));transform:scaleX(0);transform-origin:left;transition:transform 0.4s}
+.skill-card:hover::before{transform:scaleX(1)}
+.skill-card:hover{border-color:var(--card-accent,var(--accent));transform:translateY(-3px);box-shadow:0 8px 40px rgba(0,0,0,0.4)}
+.skill-card-icon{width:40px;height:40px;border-radius:10px;background:var(--card-accent,var(--accent));display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem;opacity:0.9}
+.skill-card h3{font-size:1.05rem;font-weight:600;margin-bottom:0.75rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.skill-tag{font-family:'JetBrains Mono',monospace;font-size:0.65rem;padding:0.3rem 0.6rem;background:var(--bg3);border:1px solid var(--border);border-radius:4px;color:var(--text-dim);transition:all 0.2s}
+.skill-card:hover .skill-tag{border-color:color-mix(in srgb,var(--card-accent,var(--accent)) 30%,transparent)}
+.skill-card.nlp{--card-accent:#8b5cf6}
+.skill-card.ml{--card-accent:#67e8f9}
+.skill-card.dl{--card-accent:#f0abfc}
+.skill-card.data{--card-accent:#fcd34d}
+.skill-card.mlops{--card-accent:#6ee7b7}
+.skill-card.llm{--card-accent:#a78bfa}
+.skill-card.acad{--card-accent:#fda4af}
+.skill-card.infra{--card-accent:#818cf8}
+
+.pub-list{display:flex;flex-direction:column;gap:1.25rem}
+.pub{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.75rem;transition:all 0.4s;display:grid;grid-template-columns:1fr auto;gap:1.5rem;align-items:start}
+.pub:hover{border-color:var(--accent);transform:translateX(4px);box-shadow:0 4px 30px rgba(0,0,0,0.3)}
+.pub-venue{font-family:'JetBrains Mono',monospace;font-size:0.65rem;display:inline-block;padding:0.25rem 0.6rem;border-radius:4px;margin-bottom:0.6rem;font-weight:500}
+.pub-venue.journal{background:rgba(139,92,246,0.15);color:var(--accent2);border:1px solid rgba(139,92,246,0.25)}
+.pub-venue.conference{background:rgba(103,232,249,0.12);color:var(--teal);border:1px solid rgba(103,232,249,0.2)}
+.pub-venue.preprint{background:rgba(240,171,252,0.12);color:var(--warm);border:1px solid rgba(240,171,252,0.2)}
+.pub h3{font-size:1rem;font-weight:600;margin-bottom:0.4rem;line-height:1.4}
+.pub-authors{font-size:0.8rem;color:var(--text-dim);margin-bottom:0.35rem;font-weight:300}
+.pub-authors strong{color:var(--accent3);font-weight:500}
+.pub-meta{font-size:0.72rem;color:var(--text-dim);font-family:'JetBrains Mono',monospace;opacity:0.7}
+.pub-link{align-self:center;display:flex;align-items:center;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent2);text-decoration:none;padding:0.5rem 1rem;border:1px solid var(--border);border-radius:6px;white-space:nowrap;transition:all 0.3s}
+.pub-link:hover{border-color:var(--accent2);background:rgba(167,139,250,0.08)}
+.pub-link svg{width:14px;height:14px}
+
+.projects-list{display:flex;flex-direction:column;gap:2rem}
+.project{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:2rem;display:grid;grid-template-columns:auto 1fr auto;gap:1.5rem;align-items:start;transition:all 0.4s}
+.project:hover{border-color:var(--accent);transform:translateX(4px);box-shadow:0 4px 30px rgba(0,0,0,0.3)}
+.project-num{font-family:'JetBrains Mono',monospace;font-size:2.5rem;font-weight:700;color:var(--bg3);line-height:1;min-width:48px;transition:color 0.3s}
+.project:hover .project-num{color:var(--accent)}
+.project-info h3{font-size:1.15rem;font-weight:600;margin-bottom:0.5rem}
+.project-desc{font-size:0.9rem;color:var(--text-dim);margin-bottom:0.75rem;font-weight:300}
+.project-stack{display:flex;flex-wrap:wrap;gap:0.35rem}
+.project-stack span{font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:0.25rem 0.5rem;background:var(--bg);border:1px solid var(--border);border-radius:3px;color:var(--text-dim)}
+.project-link{align-self:center;display:flex;align-items:center;gap:0.4rem;font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent2);text-decoration:none;padding:0.5rem 1rem;border:1px solid var(--border);border-radius:6px;white-space:nowrap;transition:all 0.3s}
+.project-link:hover{border-color:var(--accent2);background:rgba(167,139,250,0.08)}
+.project-link svg{width:14px;height:14px}
+.project-badges{display:flex;gap:0.5rem;margin-bottom:0.5rem;flex-wrap:wrap}
+.badge{font-family:'JetBrains Mono',monospace;font-size:0.6rem;padding:0.2rem 0.5rem;border-radius:3px;font-weight:500}
+.badge.live{background:rgba(110,231,183,0.12);color:var(--emerald);border:1px solid rgba(110,231,183,0.2)}
+.badge.research{background:rgba(167,139,250,0.12);color:var(--accent2);border:1px solid rgba(167,139,250,0.2)}
+.badge.deployed{background:rgba(103,232,249,0.12);color:var(--teal);border:1px solid rgba(103,232,249,0.2)}
+
+footer{padding:3rem 2rem;text-align:center;font-size:0.8rem;color:var(--text-dim);border-top:1px solid var(--border)}
+footer a{color:var(--accent2);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+.reveal{opacity:0;transform:translateY(24px);transition:all 0.7s cubic-bezier(0.25,0.46,0.45,0.94)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}
+.reveal-delay-2{transition-delay:0.2s}
+
+@media(max-width:768px){
+  .project{grid-template-columns:1fr;gap:1rem}
+  .project-num{font-size:1.5rem}
+  .project-link{align-self:start}
+  .pub{grid-template-columns:1fr;gap:1rem}
+  .pub-link{align-self:start}
+  .skills-grid{grid-template-columns:1fr}
+  .hero{padding:3rem 1.5rem}
+  section{padding:3rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<div class="hero-orb one"></div>
+<div class="hero-orb two"></div>
+<div class="hero-orb three"></div>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">AI/ML Researcher & Engineer</div>
+    <h1>Praise-EL <span class="gradient">Michaels</span></h1>
+    <p class="hero-desc">
+      Computational mental health researcher applying NLP, topic modeling, and large language models
+      to understand how people express distress, seek support, and navigate anxiety online.
+      Published in PLOS Mental Health, LREC-COLING, medRxiv, and JMIR.
+    </p>
+    <p class="hero-affiliation">Howard University - Electrical Engineering & Computer Science</p>
+    <div class="hero-links">
+      <a href="#publications" class="primary">Publications</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="https://github.com/" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+      <a href="https://scholar.google.com/" target="_blank">Google Scholar</a>
+    </div>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stats-grid">
+    <div><div class="stat-num">5</div><div class="stat-label">Published Papers</div></div>
+    <div><div class="stat-num">2,100+</div><div class="stat-label">Survey Respondents Analyzed</div></div>
+    <div><div class="stat-num">4+</div><div class="stat-label">LLMs Benchmarked</div></div>
+    <div><div class="stat-num">62</div><div class="stat-label">Institutions Studied</div></div>
+  </div>
+</div>
+
+<div class="tools-section">
+  <div class="marquee">
+    <span>Python</span><span>PyTorch</span><span>Hugging Face</span><span>LangChain</span>
+    <span>scikit-learn</span><span>NLTK</span><span>spaCy</span><span>BERTopic</span>
+    <span>LIWC</span><span>Pandas</span><span>NumPy</span><span>SHAP</span>
+    <span>XGBoost</span><span>FastAPI</span><span>Docker</span><span>PostgreSQL</span>
+    <span>Google Colab</span><span>Matplotlib</span><span>Seaborn</span><span>vLLM</span>
+    <span>ChromaDB</span><span>FAISS</span><span>TensorFlow</span><span>Railway</span>
+    <span>Python</span><span>PyTorch</span><span>Hugging Face</span><span>LangChain</span>
+    <span>scikit-learn</span><span>NLTK</span><span>spaCy</span><span>BERTopic</span>
+    <span>LIWC</span><span>Pandas</span><span>NumPy</span><span>SHAP</span>
+    <span>XGBoost</span><span>FastAPI</span><span>Docker</span><span>PostgreSQL</span>
+    <span>Google Colab</span><span>Matplotlib</span><span>Seaborn</span><span>vLLM</span>
+    <span>ChromaDB</span><span>FAISS</span><span>TensorFlow</span><span>Railway</span>
+  </div>
+</div>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="container">
+    <div class="section-label reveal">Research</div>
+    <h2 class="section-title reveal">Published Work</h2>
+    <div class="pub-list">
+
+      <div class="pub reveal">
+        <div class="pub-info">
+          <span class="pub-venue journal">PLOS Mental Health</span>
+          <h3>Analysing Loneliness Forum Posts, the Comments They Elicit, and the Responses to These Comments</h3>
+          <p class="pub-authors"><strong>Praise-EL Michaels</strong>, Natasha Tonge, Oluwadara Kalejaiye, Aaryan Panthi, Rahual Rai, Mmekut-Mfon Gabriel Edet, Erika Ferguson, Legand Burge, Gloria Washington, Anietie Andy</p>
+          <p class="pub-meta">Nov 2024 - BERTopic, LIWC, Reddit loneliness forums, 4-year dataset analysis</p>
+        </div>
+        <a class="pub-link" href="https://journals.plos.org/mentalhealth/article?id=10.1371/journal.pmen.0000037" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Paper
+        </a>
+      </div>
+
+      <div class="pub reveal">
+        <div class="pub-info">
+          <span class="pub-venue conference">LREC-COLING 2024</span>
+          <h3>Mitigating Translationese in Low-resource Languages: The Storyboard Approach</h3>
+          <p class="pub-authors">Garry Kuwanto, Eno-Abasi Urua, ... <strong>Praise-EL Michaels</strong>, David Ifeoluwa Adelani, Derry Tanti Wijaya, Anietie Andy</p>
+          <p class="pub-meta">May 2024 - Low-resource NLP, human annotation, fluency evaluation, 24 co-authors</p>
+        </div>
+        <a class="pub-link" href="https://arxiv.org/abs/2407.10152" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          arXiv
+        </a>
+      </div>
+
+      <div class="pub reveal">
+        <div class="pub-info">
+          <span class="pub-venue preprint">medRxiv</span>
+          <h3>The Impact of Social and Structural Support on Anxiety Among Academics in Health Professions Fields</h3>
+          <p class="pub-authors">Anietie Andy, Natasha Tonge, <strong>Praise-EL Michaels</strong>, Marina K. Holz</p>
+          <p class="pub-meta">2025 - GAD-7, health professions faculty, institutional support structures</p>
+        </div>
+        <a class="pub-link" href="https://www.medrxiv.org/content/10.1101/2025.10.13.25337911v1" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Paper
+        </a>
+      </div>
+
+      <div class="pub reveal">
+        <div class="pub-info">
+          <span class="pub-venue preprint">medRxiv</span>
+          <h3>Familial and Parental Relationships Can Ease Anxiety Among Academics in the United States</h3>
+          <p class="pub-authors">Anietie Andy, Natasha Tonge, <strong>Praise-EL Michaels</strong>, Marina K. Holz</p>
+          <p class="pub-meta">2025 - 2,106 professors, 62 institutions, GAD-7, regression analysis</p>
+        </div>
+        <a class="pub-link" href="https://www.medrxiv.org/content/10.1101/2025.04.30.25326730v2" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Paper
+        </a>
+      </div>
+
+      <div class="pub reveal">
+        <div class="pub-info">
+          <span class="pub-venue preprint">JMIR Preprint</span>
+          <h3>Disclosure of Anxiety Concerns on Social Media: Do Concerns Vary by Age and Forum?</h3>
+          <p class="pub-authors"><strong>Praise-EL Michaels</strong> et al.</p>
+          <p class="pub-meta">2025 - Social media discourse, age-based variation, anxiety disclosure patterns</p>
+        </div>
+        <a class="pub-link" href="https://preprints.jmir.org/preprint/68023" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Preprint
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-label reveal">Competencies</div>
+    <h2 class="section-title reveal">Technical Skills</h2>
+    <div class="skills-grid">
+
+      <div class="skill-card nlp reveal reveal-delay-1">
+        <div class="skill-card-icon">&#x1F4AC;</div>
+        <h3>Natural Language Processing</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Transformers</span><span class="skill-tag">BERT Fine-tuning</span>
+          <span class="skill-tag">BERTopic</span><span class="skill-tag">Tokenization</span>
+          <span class="skill-tag">TF-IDF</span><span class="skill-tag">Word2Vec</span>
+          <span class="skill-tag">GloVe</span><span class="skill-tag">Sentiment Analysis</span>
+          <span class="skill-tag">Text Classification</span><span class="skill-tag">Topic Modeling</span>
+          <span class="skill-tag">NLTK</span><span class="skill-tag">spaCy</span>
+          <span class="skill-tag">NER</span><span class="skill-tag">LIWC</span>
+        </div>
+      </div>
+
+      <div class="skill-card llm reveal reveal-delay-2">
+        <div class="skill-card-icon">&#x1F9E0;</div>
+        <h3>LLMs & Generative AI</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">LLM Fine-tuning (LoRA/QLoRA)</span><span class="skill-tag">Prompt Engineering</span>
+          <span class="skill-tag">RAG Pipelines</span><span class="skill-tag">LangChain</span>
+          <span class="skill-tag">vLLM Inference</span><span class="skill-tag">Llama 2/3</span>
+          <span class="skill-tag">Mistral</span><span class="skill-tag">GPT API</span>
+          <span class="skill-tag">Gemini API</span><span class="skill-tag">DeepSeek</span>
+          <span class="skill-tag">Vector Databases</span><span class="skill-tag">ChromaDB</span>
+          <span class="skill-tag">FAISS</span>
+        </div>
+      </div>
+
+      <div class="skill-card ml reveal reveal-delay-1">
+        <div class="skill-card-icon">&#x1F4CA;</div>
+        <h3>Classical Machine Learning</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">XGBoost</span><span class="skill-tag">Random Forest</span>
+          <span class="skill-tag">Logistic Regression</span><span class="skill-tag">SVM</span>
+          <span class="skill-tag">Naive Bayes</span><span class="skill-tag">Feature Engineering</span>
+          <span class="skill-tag">Hyperparameter Tuning</span><span class="skill-tag">Ensemble Methods</span>
+          <span class="skill-tag">Threshold Tuning</span><span class="skill-tag">Cross-validation</span>
+        </div>
+      </div>
+
+      <div class="skill-card dl reveal reveal-delay-2">
+        <div class="skill-card-icon">&#x26A1;</div>
+        <h3>Deep Learning</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">PyTorch</span><span class="skill-tag">TensorFlow/Keras</span>
+          <span class="skill-tag">LSTM</span><span class="skill-tag">Feed-Forward Networks</span>
+          <span class="skill-tag">Attention Mechanisms</span><span class="skill-tag">Transfer Learning</span>
+          <span class="skill-tag">Model Quantization (AWQ/GPTQ)</span><span class="skill-tag">GPU Training (Colab)</span>
+        </div>
+      </div>
+
+      <div class="skill-card data reveal reveal-delay-1">
+        <div class="skill-card-icon">&#x1F5C2;</div>
+        <h3>Data Processing & Statistical Analysis</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span>
+          <span class="skill-tag">Data Cleaning</span><span class="skill-tag">EDA</span>
+          <span class="skill-tag">Statistical Testing</span><span class="skill-tag">Regression Analysis</span>
+          <span class="skill-tag">Hypothesis Testing</span><span class="skill-tag">Survey Data Analysis</span>
+          <span class="skill-tag">Matplotlib/Seaborn</span><span class="skill-tag">Inter-annotator Agreement</span>
+          <span class="skill-tag">Cohen's Kappa</span><span class="skill-tag">GAD-7 Scoring</span>
+        </div>
+      </div>
+
+      <div class="skill-card acad reveal reveal-delay-2">
+        <div class="skill-card-icon">&#x1F52C;</div>
+        <h3>Explainability & Evaluation</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">SHAP</span><span class="skill-tag">LIME</span>
+          <span class="skill-tag">Precision/Recall Tradeoffs</span><span class="skill-tag">AUC-ROC</span>
+          <span class="skill-tag">Confusion Matrices</span><span class="skill-tag">F1 Score</span>
+          <span class="skill-tag">MAE/MSE</span><span class="skill-tag">Pearson/Spearman</span>
+          <span class="skill-tag">Human Annotation Evaluation</span>
+        </div>
+      </div>
+
+      <div class="skill-card mlops reveal reveal-delay-1">
+        <div class="skill-card-icon">&#x1F680;</div>
+        <h3>MLOps & Deployment</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">FastAPI</span><span class="skill-tag">Docker</span>
+          <span class="skill-tag">Railway</span><span class="skill-tag">Google Cloud Platform</span>
+          <span class="skill-tag">REST API Design</span><span class="skill-tag">Model Serving</span>
+          <span class="skill-tag">CI/CD</span><span class="skill-tag">PostgreSQL</span>
+        </div>
+      </div>
+
+      <div class="skill-card infra reveal reveal-delay-2">
+        <div class="skill-card-icon">&#x1F4D1;</div>
+        <h3>Research & Annotation</h3>
+        <div class="skill-tags">
+          <span class="skill-tag">Human Annotation Design</span><span class="skill-tag">Likert-scale Scoring</span>
+          <span class="skill-tag">Psycholinguistic Analysis</span><span class="skill-tag">Reddit Data Collection</span>
+          <span class="skill-tag">Survey Design</span><span class="skill-tag">IRB Compliance</span>
+          <span class="skill-tag">Cross-cultural NLP</span><span class="skill-tag">Low-resource Languages</span>
+          <span class="skill-tag">Academic Writing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label reveal">Portfolio</div>
+    <h2 class="section-title reveal">Featured Projects</h2>
+    <div class="projects-list">
+
+      <div class="project reveal">
+        <div class="project-num">01</div>
+        <div class="project-info">
+          <div class="project-badges"><span class="badge research">Research</span><span class="badge live">Active</span></div>
+          <h3>LLM vs Human Annotation - Mental Health Social Support</h3>
+          <p class="project-desc">Comparing GPT, Gemini, DeepSeek, and Llama against human annotators for classifying 8 social support dimensions in mental health Reddit posts. 500-post dataset with Likert-scale scoring, inter-annotator agreement analysis, and fine-tuning Llama 2 7B with LoRA on the annotation task.</p>
+          <div class="project-stack">
+            <span>Llama 2 (LoRA/QLoRA)</span><span>GPT API</span><span>Gemini API</span>
+            <span>DeepSeek</span><span>Hugging Face</span><span>Cohen's Kappa</span>
+            <span>Pandas</span><span>Google Colab</span>
+          </div>
+        </div>
+        <a class="project-link" href="#" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Colab</a>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-num">02</div>
+        <div class="project-info">
+          <div class="project-badges"><span class="badge deployed">Deployed</span><span class="badge live">Live API</span></div>
+          <h3>Credit Risk Scoring API with Full SHAP Explainability</h3>
+          <p class="project-desc">End-to-end ML pipeline on 307K providers and 13.6M payment records. Deliberately removed black-box features to achieve full explainability - trading 4% AUC for complete SHAP transparency. Compared LR, Random Forest, Neural Network, and XGBoost across 61 engineered features.</p>
+          <div class="project-stack">
+            <span>XGBoost</span><span>SHAP</span><span>scikit-learn</span><span>FastAPI</span>
+            <span>PostgreSQL</span><span>Docker</span><span>Railway</span><span>Feature Engineering</span>
+          </div>
+        </div>
+        <a class="project-link" href="https://credit-risk-predictor-production.up.railway.app/docs" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live API</a>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-num">03</div>
+        <div class="project-info">
+          <div class="project-badges"><span class="badge research">Tutorial Series</span></div>
+          <h3>NLP from Scratch - Complete Tutorial System</h3>
+          <p class="project-desc">Comprehensive hands-on tutorial covering the full NLP pipeline: bag-of-words, TF-IDF with n-grams, Word2Vec embeddings, GloVe, and BERT fine-tuning for sentiment analysis. Includes vectorization compatibility guides, model comparison frameworks, and visualization notebooks.</p>
+          <div class="project-stack">
+            <span>BERT</span><span>TF-IDF</span><span>Word2Vec</span><span>GloVe</span>
+            <span>Hugging Face</span><span>scikit-learn</span><span>NLTK</span><span>Colab</span>
+          </div>
+        </div>
+        <a class="project-link" href="#" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Colab</a>
+      </div>
+
+      <div class="project reveal">
+        <div class="project-num">04</div>
+        <div class="project-info">
+          <div class="project-badges"><span class="badge research">In Progress</span></div>
+          <h3>LLM Inference Serving with vLLM</h3>
+          <p class="project-desc">Production inference server for Mistral-7B using vLLM with optimized batching, quantization (AWQ/GPTQ), and OpenAI-compatible API endpoints. Covering inference optimization, fine-tuning pipelines, and MLOps deployment patterns.</p>
+          <div class="project-stack">
+            <span>vLLM</span><span>Mistral-7B</span><span>CUDA</span><span>FastAPI</span>
+            <span>Quantization</span><span>Model Serving</span><span>Colab Pro</span>
+          </div>
+        </div>
+        <a class="project-link" href="#" target="_blank"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Colab</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Built by Praise-EL Michaels &mdash; <a href="mailto:praise-el@example.com">Get in touch</a></p>
+  <p style="margin-top:0.5rem;font-size:0.7rem;color:var(--border)">Howard University - Electrical Engineering & Computer Science</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
