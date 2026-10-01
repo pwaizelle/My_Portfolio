@@ -11,4 +11,4 @@ This portfolio brings together selected publications, research projects, machine
 Portfolio
 
 The portfolio website is built as a responsive single page application using HTML, CSS, and JavaScript.
-# This will help you build a portfolio link that organizations can click on and see all they need to know about you without needing your resume. It is a very interactive engaging way to learn about you.
+<!-- # This will help you build a portfolio link that organizations can click on and see all they need to know about you without needing your resume. It is a very interactive engaging way to learn about you. -->
